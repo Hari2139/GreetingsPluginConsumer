@@ -1,0 +1,18 @@
+buildscript {
+	repositories {
+		mavenLocal()
+	}
+	
+	dependencies {
+		classpath 'com.hari:GreetingsPlugin:1.0-SNAPSHOT'
+	}
+}
+
+apply plugin: 'groovy'
+apply plugin: 'com.hari.greetings'
+
+//type com.hari.GreetingTask is defined inside the plugin
+task greetConsumer(type: com.hari.GreetingTask) {
+	greeting = 'Howdy from GreetingsTaskConsumer project'
+}
+
